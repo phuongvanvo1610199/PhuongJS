@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="demo1.css" />
+    <style>
+      body {
+        box-sizing: border-box;
+      }
+      .bc {
+        width: 100px;
+        height: 100px;
+      }
+      .text-center {
+        justify-content: center;
+      }
+      .border-bg-color {
+        border: 10px, solid, black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container border-bg-color">
+      <div class="row bg-warning text-center border-bg-color">
+        <h1>QUẢN LÝ SINH VIÊN</h1>
+      </div>
+      <div class="row border-bg-color">
+        <div class="col bg-danger border-bg-color">
+          <!-- danh sách sinh viên -->
+          <div class="col border-bg-color table-list-info">
+            <h3 id="title">Danh sách sinh viên</h3>
+            <div id="table-list-student">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">STT</th>
+                    <th scope="col">FullName</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Gender</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Grade</th>
+                    <th scope="col">View</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="task-item-student hidden-item">
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td>@mdo</td>
+                    <td>@mdo</td>
+                    <td>@mdo</td>
+                    <td>
+                      <button
+                        id="item-btn"
+                        type="button"
+                        class="btn btn-success"
+                      >
+                        View
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <!-- thông tin sinh viên -->
+          <div class="col border-bg-color info-student-checked">
+            <h3 id="title">Thông tin sinh viên</h3>
+            <div class="table-info-student">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th scope="col">Thông tin</th>
+                    <th scope="col">Giá trị</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">STT</th>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">FULL NAME</th>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">DATE</th>
+                    <td colspan="2"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">GENDER</th>
+                    <td colspan="2"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">EMAIL</th>
+                    <td colspan="2"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">ADDRESS</th>
+                    <td colspan="2"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">GRADE</th>
+                    <td colspan="2"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <!-- Thông tin sinh viên -->
+        <div class="col bg-primary border-bg-color">
+          <h3 id="title">Thêm thông tin sinh viên</h3>
+          <div id="task-form">
+            <form>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="Full name">Full Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="inputFullName"
+                    placeholder="FullName"
+                  />
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="Date of birth">Date of birth</label>
+                  <input
+                    type="date"
+                    class="form-control"
+                    id="inputDob"
+                    placeholder="Date"
+                    value=""
+                  />
+                </div>
+              </div>
+              <!-- gender -->
+              <div class="form-group">
+                <label for="inputAddress">Gender</label>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="gender"
+                    id="check-gender-female"
+                    value="Male"
+                  />
+                  <label class="form-check-label" for="check-gender-male">
+                    Male
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="gender"
+                    id="check-gender-female"
+                    value="Female"
+                    checked
+                  />
+                  <label class="form-check-label" for="check-gender-female">
+                    Female
+                  </label>
+                </div>
+              </div>
+              <!-- email -->
+              <div class="form-group">
+                <label for="inputEmail">Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="inputEmail"
+                  placeholder="Email"
+                />
+              </div>
+
+              <!-- address -->
+              <div class="form-group">
+                <label for="inputAddress">Address</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inputAddress"
+                  placeholder="Address"
+                />
+              </div>
+
+              <!-- grade -->
+              <div class="form-group">
+                <label for="inputGrade">Grade</label>
+                <select id="inputGrade" class="form-control">
+                  <option value="" selected>Choose...</option>
+                  <option value="A">A</option>
+                  <option value="B">B</option>
+                  <option value="C">C</option>
+                  <option value="D">D</option>
+                  <option value="E">E</option>
+                </select>
+              </div>
+
+              <button id="btn-submit" type="submit" class="btn btn-danger">
+                SUBMIT
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script language="javascript" src="demo1.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
